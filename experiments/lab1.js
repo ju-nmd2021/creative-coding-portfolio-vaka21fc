@@ -1,48 +1,70 @@
 //Setup Canvas//
 
 function setup() {
-    createCanvas(500,500);
+  createCanvas(500, 500);
+  noStroke();
 }
 
 function draw() {
-    background(246, 239, 214);
-
-// Color Palette//
-    let colors = [
-        color(178, 93, 166),
-        color(102, 136, 195),
-        color(72, 165, 106),
-        color(234, 175, 65),
-        color(206, 74, 74)
-      ];
-
-let numCircles = 5;
-let spacing = 100;
-
-// Half-circles//
-for (let i = 0; i < numCircles; i++) {
-  let centerX = 50;
-  let centerY = 50+i * spacing;
-  let radius = 45;
-  
-  let startAngle = HALF_PI;
-  let endAngle = -HALF_PI;
-  
-  let fillColor = colors[i];
-  
-  fill(fillColor);
-  arc(centerX, centerY, radius * 2, radius * 2, startAngle, endAngle, PIE);
+  background(246, 239, 214);
+  rainbowFrame();
 }
 
-//Full Circles
-for (let i = 0; i < numCircles; i++) {
-    let centerX = 100;
-    let centerY = 50+i * spacing;
-    let width = 90;
- 
+function rainbowFrame() {
+  // Color Palette//
+  let colors = [
+    color(178, 93, 166),
+    color(102, 136, 195),
+    color(72, 165, 106),
+    color(234, 175, 65),
+    color(206, 74, 74),
+  ];
+
+  let numCircles = 5;
+  let spacing = 100;
+
+  for (let i = 0; i < numCircles; i += 1) {
+    let startAngle = HALF_PI;
+    let endAngle = -HALF_PI;
+
     let fillColor = colors[i];
-    
+
     fill(fillColor);
-    ellipse(centerX,centerY,90,90);
+    arc(50, 50 + i * spacing, 90, 90, startAngle, endAngle, PIE);
+  }
+
+  for (let i = 0; i < numCircles; i += 1) {
+    push();
+    let startAngle = PI;
+    let endAngle = 0;
+
+    let fillColor = colors[i];
+
+    fill(fillColor);
+    arc(50 + i * spacing, 50, 90, 90, startAngle, endAngle, PIE);
+    pop();
+  }
+
+  for (let i = 0; i < numCircles; i += 1) {
+    push();
+    let startAngle = -HALF_PI;
+    let endAngle = HALF_PI;
+
+    let fillColor = colors[4 - i];
+
+    fill(fillColor);
+    arc(450, 50 + i * spacing, 90, 90, startAngle, endAngle, PIE);
+    pop();
+  }
+  for (let i = 0; i < numCircles; i += 1) {
+    push();
+    let startAngle = 0;
+    let endAngle = PI;
+
+    let fillColor = colors[4 - i];
+
+    fill(fillColor);
+    arc(50 + i * spacing, 450, 90, 90, startAngle, endAngle, PIE);
+    pop();
   }
 }
