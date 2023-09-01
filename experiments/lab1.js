@@ -1,11 +1,5 @@
 // Rainbow color Palette//
-let colors = [
-  color(178, 93, 166),
-  color(102, 136, 195),
-  color(72, 165, 106),
-  color(234, 175, 65),
-  color(206, 74, 74),
-];
+
 
 //Setup Canvas//
 
@@ -22,6 +16,13 @@ function draw() {
 }
 
 function rainbowFrame() {
+  let colors = [
+    color(178, 93, 166),
+    color(102, 136, 195),
+    color(72, 165, 106),
+    color(234, 175, 65),
+    color(206, 74, 74),
+  ];
   let numCircles = 5;
   let spacing = 100;
 
@@ -72,6 +73,13 @@ function rainbowFrame() {
 }
 
 function circleParty() {
+  let colors = [
+    color(178, 93, 166),
+    color(102, 136, 195),
+    color(72, 165, 106),
+    color(234, 175, 65),
+    color(206, 74, 74),
+  ];
   push();
   noFill();
   strokeWeight(8);
