@@ -1,6 +1,3 @@
-// Rainbow color Palette//
-
-
 //Setup Canvas//
 
 function setup() {
