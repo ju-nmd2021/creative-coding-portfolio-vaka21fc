@@ -42,4 +42,8 @@ function draw() {
   x += speedX;
   y += speedY;
   //
+  }
+
+  function mousePressed() {
+    ballColor = random(colors);
 }
