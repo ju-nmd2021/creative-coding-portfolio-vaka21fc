@@ -35,6 +35,12 @@ class Ball {
     this.width = width;
     this.speedX = random(-12, 12);
     this.speedY = random(-12, 12);
+    if(this.speedX == 0){
+      this.speedX += 3;
+    }
+    if(this.speedY == 0){
+      this.speedY += 3;
+    }
     this.ballColor = random(colors);
   }
   draw() {
