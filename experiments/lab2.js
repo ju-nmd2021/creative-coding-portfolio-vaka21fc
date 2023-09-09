@@ -1,15 +1,17 @@
 //Defining the color palette for my balls//
-let colors = [
-  color(112, 214, 255),
-  color(255, 112, 166),
-  color(255, 151, 112),
-  color(255, 214, 112),
-  color(233, 255, 112),
-];
-
+let colors; 
+let balls;
 //Canvas Setup//
 function setup() {
   createCanvas(500, 500);
+  colors = [
+    color(112, 214, 255),
+    color(255, 112, 166),
+    color(255, 151, 112),
+    color(255, 214, 112),
+    color(233, 255, 112),
+  ];
+  balls = [];
 }
 
 function draw() {
@@ -21,8 +23,6 @@ function draw() {
 }
 
 //Generating new balls when the mouse is pressed//
-let balls = [];
-
 function mousePressed() {
   let ball = new Ball(mouseX, mouseY, random(20, 100));
   balls.push(ball);
