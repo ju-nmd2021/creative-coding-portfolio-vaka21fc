@@ -1,8 +1,4 @@
-//Defining my variables
-let ballColor;
-let balls = [];
-
-//Defining the color palette for my ball//
+//Defining the color palette for my balls//
 let colors = [
   color(112, 214, 255),
   color(255, 112, 166),
@@ -10,13 +6,11 @@ let colors = [
   color(255, 214, 112),
   color(233, 255, 112),
 ];
-//
 
 //Canvas Setup//
 function setup() {
   createCanvas(500, 500);
 }
-//
 
 function draw() {
   background(240);
@@ -25,6 +19,9 @@ function draw() {
     ball.update();
   });
 }
+
+//Generating new balls when the mouse is pressed//
+let balls = [];
 
 function mousePressed() {
   let ball = new Ball(mouseX, mouseY, random(20, 100));
@@ -53,7 +50,7 @@ class Ball {
       this.speedY *= -1;
       this.ballColor = random(colors);
     }
-    //
+
     //Ball-speed
     this.x += this.speedX;
     this.y += this.speedY;
