@@ -1,9 +1,7 @@
 //Defining my variables
-let x = 250;
-let y = 250;
-let speedX = 4;
-let speedY = 5;
+
 let ballColor;
+let balls = [];
 //
 
 //Defining the color palette for my ball//
@@ -25,8 +23,15 @@ function setup() {
 
 function draw() {
   background(240);
+  balls.forEach(ball => {
+    ball.draw();
+    ball.update();
+  });
+  /*
   fill(ballColor);
-  ellipse(x, y, 70);
+  ellipse(mouseX, mouseY, random(20, 100));
+
+
 
   //Defining the walls as the limit for the balls movement, and adding the color change each time the ball hits a wall
   if (x > width || x < 0) {
@@ -42,8 +47,39 @@ function draw() {
   x += speedX;
   y += speedY;
   //
-  }
+  */
+}
 
-  function mousePressed() {
-    ballColor = random(colors);
+function mousePressed(){
+    let ball = new Ball(mouseX, mouseY, random(20,100));
+    balls.push(ball);
+}
+
+class Ball {
+  constructor(x, y, width) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.speedX = random(3,12);
+    this.speedY = random(3,12);
+
+  }
+  draw() {
+    fill(ballColor);
+    ellipse(this.x, this.y, this.width);
+  }
+  update(){
+    if (this.x > width || this.x < 0) {
+        this.speedX *= -1;
+        ballColor = random(colors);
+      }
+      if (this.y > height || this.y < 0) {
+        this.speedY *= -1;
+        ballColor = random(colors);
+      }
+      //
+      //Ball-speed
+      this.x += this.speedX;
+      this.y += this.speedY;
+  }
 }
