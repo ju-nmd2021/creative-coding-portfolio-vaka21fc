@@ -16,6 +16,7 @@ function setup() {
   balls = [];
   notes = ["C4", "G4", "F4", "A4", "B4"];
   synth = new Tone.Synth().toDestination();
+  synth.oscillator.type = 'sawtooth';
 }
 
 function draw() {
