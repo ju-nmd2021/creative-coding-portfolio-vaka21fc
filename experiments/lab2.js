@@ -1,6 +1,6 @@
-//Defining the color palette and notes for my balls//
+//Defining the color palette and notes for the balls//
 let colors;
-let notes; 
+let notes;
 let balls;
 let synth;
 //Canvas Setup//
@@ -14,13 +14,7 @@ function setup() {
     color(233, 255, 112),
   ];
   balls = [];
-  notes = [
-    "C4",
-    "G4",
-    "F4",
-    "A4",
-    "B4",
-  ];
+  notes = ["C4", "G4", "F4", "A4", "B4"];
   synth = new Tone.Synth().toDestination();
 }
 
@@ -38,20 +32,20 @@ function mousePressed() {
   balls.push(ball);
 }
 
-function ballSound(ballColor){
-  if (ballColor == colors[0]){
+function ballSound(ballColor) {
+  if (ballColor == colors[0]) {
     synth.triggerAttackRelease(notes[0], "4n");
   }
-  if (ballColor == colors[1]){
+  if (ballColor == colors[1]) {
     synth.triggerAttackRelease(notes[1], "4n");
   }
-  if (ballColor == colors[2]){
+  if (ballColor == colors[2]) {
     synth.triggerAttackRelease(notes[2], "4n");
   }
-  if (ballColor == colors[3]){
+  if (ballColor == colors[3]) {
     synth.triggerAttackRelease(notes[3], "4n");
   }
-  if (ballColor == colors[4]){
+  if (ballColor == colors[4]) {
     synth.triggerAttackRelease(notes[4], "4n");
   }
 }
@@ -63,10 +57,10 @@ class Ball {
     this.width = width;
     this.speedX = random(-12, 12);
     this.speedY = random(-12, 12);
-    if(this.speedX == 0){
+    if (this.speedX == 0) {
       this.speedX += 3;
     }
-    if(this.speedY == 0){
+    if (this.speedY == 0) {
       this.speedY += 3;
     }
     this.ballColor = random(colors);
@@ -91,6 +85,3 @@ class Ball {
     this.y += this.speedY;
   }
 }
-
-
-
