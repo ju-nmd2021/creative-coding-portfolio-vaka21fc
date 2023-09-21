@@ -7,20 +7,20 @@ let synth;
 function setup() {
   createCanvas(500, 500);
   colors = [
-    color(112, 214, 255),
-    color(255, 112, 166),
-    color(255, 151, 112),
-    color(255, 214, 112),
-    color(233, 255, 112),
+    color(152,0,0),
+    color(152,69,0),
+    color(167,127,3),
+    color(12,137,0),
+    color(0,75,131),
   ];
   balls = [];
-  notes = ["C4", "G4", "F4", "A4", "B4"];
+  notes = ["D2", "E2", "F2", "G2", "A2"];
   synth = new Tone.Synth().toDestination();
-  synth.oscillator.type = 'sawtooth';
+  synth.oscillator.type = 'triangle';
 }
 
 function draw() {
-  background(240);
+  background(40);
   balls.forEach((ball) => {
     ball.draw();
     ball.update();
