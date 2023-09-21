@@ -7,16 +7,16 @@ let synth;
 function setup() {
   createCanvas(500, 500);
   colors = [
-    color(152,0,0),
-    color(152,69,0),
-    color(167,127,3),
-    color(12,137,0),
-    color(0,75,131),
+    color(152, 0, 0),
+    color(152, 69, 0),
+    color(167, 127, 3),
+    color(12, 137, 0),
+    color(0, 75, 131),
   ];
   squares = [];
   notes = ["D2", "E2", "F2", "G2", "A2"];
   synth = new Tone.Synth().toDestination();
-  synth.oscillator.type = 'triangle';
+  synth.oscillator.type = "triangle";
 }
 
 function draw() {
@@ -56,8 +56,8 @@ class Square {
     this.x = x;
     this.y = y;
     this.width = width;
-    this.speedX = random(-12, 12);
-    this.speedY = random(-12, 12);
+    this.speedX = random(-3, 3);
+    this.speedY = random(-3, 3);
     if (this.speedX == 0) {
       this.speedX += 3;
     }
