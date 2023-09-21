@@ -1,7 +1,7 @@
-//Defining the color palette and notes for the balls//
+//Defining the color palette and notes for the squares//
 let colors;
 let notes;
-let balls;
+let squares;
 let synth;
 //Canvas Setup//
 function setup() {
@@ -13,7 +13,7 @@ function setup() {
     color(12,137,0),
     color(0,75,131),
   ];
-  balls = [];
+  squares = [];
   notes = ["D2", "E2", "F2", "G2", "A2"];
   synth = new Tone.Synth().toDestination();
   synth.oscillator.type = 'triangle';
@@ -21,37 +21,37 @@ function setup() {
 
 function draw() {
   background(40);
-  balls.forEach((ball) => {
-    ball.draw();
-    ball.update();
+  squares.forEach((square) => {
+    square.draw();
+    square.update();
   });
 }
 
-//Generating new balls when the mouse is pressed//
+//Generating new squares when the mouse is pressed//
 function mousePressed() {
-  let ball = new Ball(mouseX, mouseY, random(20, 100));
-  balls.push(ball);
+  let square = new Square(mouseX, mouseY, random(20, 100));
+  squares.push(square);
 }
 
-function ballSound(ballColor) {
-  if (ballColor == colors[0]) {
+function squareSound(squareColor) {
+  if (squareColor == colors[0]) {
     synth.triggerAttackRelease(notes[0], "4n");
   }
-  if (ballColor == colors[1]) {
+  if (squareColor == colors[1]) {
     synth.triggerAttackRelease(notes[1], "4n");
   }
-  if (ballColor == colors[2]) {
+  if (squareColor == colors[2]) {
     synth.triggerAttackRelease(notes[2], "4n");
   }
-  if (ballColor == colors[3]) {
+  if (squareColor == colors[3]) {
     synth.triggerAttackRelease(notes[3], "4n");
   }
-  if (ballColor == colors[4]) {
+  if (squareColor == colors[4]) {
     synth.triggerAttackRelease(notes[4], "4n");
   }
 }
 
-class Ball {
+class Square {
   constructor(x, y, width) {
     this.x = x;
     this.y = y;
@@ -64,24 +64,24 @@ class Ball {
     if (this.speedY == 0) {
       this.speedY += 3;
     }
-    this.ballColor = random(colors);
-    ballSound(this.ballColor);
+    this.squareColor = random(colors);
+    squareSound(this.squareColor);
   }
   draw() {
-    fill(this.ballColor);
-    ellipse(this.x, this.y, this.width);
+    fill(this.squareColor);
+    rect(this.x, this.y, this.width);
   }
   update() {
     if (this.x > width || this.x < 0) {
       this.speedX *= -1;
-      this.ballColor = random(colors);
+      this.squareColor = random(colors);
     }
     if (this.y > height || this.y < 0) {
       this.speedY *= -1;
-      this.ballColor = random(colors);
+      this.squareColor = random(colors);
     }
 
-    //Ball-speed
+    //Square-speed
     this.x += this.speedX;
     this.y += this.speedY;
   }
