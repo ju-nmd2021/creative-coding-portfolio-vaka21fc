@@ -6,19 +6,19 @@ function setup() {
   }
   
   function draw() {
-    background(246, 239, 214);
-    rainbowFrame();
+    background(238, 238, 238);
+    frame();
     circleParty();
     noLoop();
   }
   
-  function rainbowFrame() {
+  function frame() {
     let colors = [
-      color(178, 93, 166),
-      color(102, 136, 195),
-      color(72, 165, 106),
-      color(234, 175, 65),
-      color(206, 74, 74),
+      color(204, 204, 204),
+      color(153, 153, 153),
+      color(102, 102, 102),
+      color(51, 51, 51),
+      color(0),
     ];
     let numCircles = 5;
     let spacing = 100;
@@ -71,11 +71,11 @@ function setup() {
   
   function circleParty() {
     let colors = [
-      color(178, 93, 166),
-      color(102, 136, 195),
-      color(72, 165, 106),
-      color(234, 175, 65),
-      color(206, 74, 74),
+      color(204, 204, 204),
+      color(153, 153, 153),
+      color(102, 102, 102),
+      color(51, 51, 51),
+      color(0),
     ];
     push();
     noFill();
