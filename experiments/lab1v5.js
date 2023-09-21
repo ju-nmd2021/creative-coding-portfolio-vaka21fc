@@ -74,7 +74,7 @@ function squareParty() {
   for (let i = 0; i < 15; i += 1) {
     // The following 2 lines of code was created with the help of Emil Karlsson
     stroke(colors[floor(random(0, 5))]);
-    rect(random(150, 350), random(150, 350), random(20, 50), random(20, 50));
+    rect(random(150, 350), random(150, 350), random(20, 40), random(20, 40));
   }
   pop();
 }
