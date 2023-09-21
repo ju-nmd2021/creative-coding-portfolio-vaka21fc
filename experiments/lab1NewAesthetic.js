@@ -12,11 +12,11 @@ function draw() {
 
 function rainbowFrame() {
   let colors = [
-    color(178, 93, 166),
-    color(102, 136, 195),
-    color(72, 165, 106),
-    color(234, 175, 65),
-    color(206, 74, 74),
+    color(124, 38, 41),
+    color(219, 107, 48),
+    color(237, 155, 51),
+    color(101, 102, 53),
+    color(78, 53, 36),
   ];
   let numCircles = 4;
   let spacing = 120;
