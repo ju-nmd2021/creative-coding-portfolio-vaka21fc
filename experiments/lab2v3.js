@@ -1,87 +1,88 @@
-//Defining the color palette and notes for the balls//
+//Defining the color palette and notes for the bubbles//
 let colors;
 let notes;
-let balls;
+let bubbles;
 let synth;
 //Canvas Setup//
 function setup() {
   createCanvas(500, 500);
+  noStroke();
   colors = [
-    color(112, 214, 255),
-    color(255, 112, 166),
-    color(255, 151, 112),
-    color(255, 214, 112),
-    color(233, 255, 112),
+    color(196, 180, 246, 150),
+    color(176, 212, 234, 150),
+    color(191, 238, 207, 150),
+    color(247, 249, 210, 150),
+    color(253, 250, 247, 150),
   ];
-  balls = [];
-  notes = ["C4", "G4", "F4", "A4", "B4"];
+  bubbles = [];
+  notes = ["C3", "G3", "F3", "A3", "B3"];
   synth = new Tone.Synth().toDestination();
-  synth.oscillator.type = 'sawtooth';
+  synth.oscillator.type = "triangle";
 }
 
 function draw() {
   background(240);
-  balls.forEach((ball) => {
-    ball.draw();
-    ball.update();
+  bubbles.forEach((bubble) => {
+    bubble.draw();
+    bubble.update();
   });
 }
 
-//Generating new balls when the mouse is pressed//
+//Generating new bubbles when the mouse is pressed//
 function mousePressed() {
-  let ball = new Ball(mouseX, mouseY, random(20, 100));
-  balls.push(ball);
+  let bubble = new Bubble(mouseX, mouseY, random(20, 100));
+  bubbles.push(bubble);
 }
 
-function ballSound(ballColor) {
-  if (ballColor == colors[0]) {
+function bubbleSound(bubbleColor) {
+  if (bubbleColor == colors[0]) {
     synth.triggerAttackRelease(notes[0], "4n");
   }
-  if (ballColor == colors[1]) {
+  if (bubbleColor == colors[1]) {
     synth.triggerAttackRelease(notes[1], "4n");
   }
-  if (ballColor == colors[2]) {
+  if (bubbleColor == colors[2]) {
     synth.triggerAttackRelease(notes[2], "4n");
   }
-  if (ballColor == colors[3]) {
+  if (bubbleColor == colors[3]) {
     synth.triggerAttackRelease(notes[3], "4n");
   }
-  if (ballColor == colors[4]) {
+  if (bubbleColor == colors[4]) {
     synth.triggerAttackRelease(notes[4], "4n");
   }
 }
 
-class Ball {
+class Bubble {
   constructor(x, y, width) {
     this.x = x;
     this.y = y;
     this.width = width;
-    this.speedX = random(-12, 12);
-    this.speedY = random(-12, 12);
+    this.speedX = random(-2, 2);
+    this.speedY = random(-2, 2);
     if (this.speedX == 0) {
       this.speedX += 3;
     }
     if (this.speedY == 0) {
       this.speedY += 3;
     }
-    this.ballColor = random(colors);
-    ballSound(this.ballColor);
+    this.bubbleColor = random(colors);
+    bubbleSound(this.bubbleColor);
   }
   draw() {
-    fill(this.ballColor);
+    fill(this.bubbleColor);
     ellipse(this.x, this.y, this.width);
   }
   update() {
     if (this.x > width || this.x < 0) {
       this.speedX *= -1;
-      this.ballColor = random(colors);
+      this.bubbleColor = random(colors);
     }
     if (this.y > height || this.y < 0) {
       this.speedY *= -1;
-      this.ballColor = random(colors);
+      this.bubbleColor = random(colors);
     }
 
-    //Ball-speed
+    //Bubble-speed
     this.x += this.speedX;
     this.y += this.speedY;
   }

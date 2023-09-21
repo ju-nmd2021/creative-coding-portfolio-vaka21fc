@@ -6,19 +6,19 @@ function setup() {
 }
 
 function draw() {
-  background(238, 238, 238);
-  frame();
-  circleParty();
+  background(255, 249, 190);
+  rainbowFrame();
+  squareParty();
   noLoop();
 }
 
-function frame() {
+function rainbowFrame() {
   let colors = [
-    color(204, 204, 204),
-    color(153, 153, 153),
-    color(102, 102, 102),
-    color(51, 51, 51),
-    color(0),
+    color(188, 100, 123),
+    color(221, 171, 67),
+    color(137, 98, 41),
+    color(90, 62, 47),
+    color(208, 97, 46),
   ];
   let numCircles = 5;
   let spacing = 100;
@@ -69,13 +69,13 @@ function frame() {
   }
 }
 
-function circleParty() {
+function squareParty() {
   let colors = [
-    color(204, 204, 204),
-    color(153, 153, 153),
-    color(102, 102, 102),
-    color(51, 51, 51),
-    color(0),
+    color(188, 100, 123),
+    color(221, 171, 67),
+    color(137, 98, 41),
+    color(90, 62, 47),
+    color(208, 97, 46),
   ];
   push();
   noFill();
@@ -83,7 +83,7 @@ function circleParty() {
   for (let i = 0; i < 15; i += 1) {
     // The following 2 lines of code was created with the help of Emil Karlsson
     stroke(colors[floor(random(0, 5))]);
-    ellipse(random(100, 400), random(150, 350), random(20, 50), random(20, 50));
+    rect(random(100, 400), random(150, 350), random(20, 50), random(20, 50));
   }
   pop();
 }
