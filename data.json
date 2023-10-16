@@ -1,12 +1,5 @@
 [
   {
-    "file": "experiments/example.js",
-    "name": "Name of your experiment",
-    "description": "Explains the what and the why. What is the main idea? What is the purpose? Describes the coding process and implementation choices and gives a high level system overview.",
-    "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
-    "github": "https://www.github.com/pixelkind"
-  },
-  {
     "file": "experiments/lab1v1.js",
     "name": "Lab 1: Retro Rainbow",
     "description": "The purpose of this piece was for me to get back into coding and using javascript and p5, as I have not used it in a long time.",
@@ -43,24 +36,23 @@
   },
   {
     "file": "experiments/lab2v1.js",
-    "name": "Lab 2: Bouncy Balls",
+    "name": "Lab 2 and 3: Bouncy Balls",
     "description": "I was inspired by one of Garrits examples. I played around with values to learn the meaning of the code, and then I added more features to make the finished piece match my vision for the project.",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-vaka21fc/blob/main/experiments/lab2v1.js"
   },
   {
     "file": "experiments/lab2v2.js",
-    "name": "Lab 2, with a new aesthetic",
+    "name": "Lab 2 and 3, with a new aesthetic",
     "description": "Explains the what and the why. What is the main idea? What is the purpose? Describes the coding process and implementation choices and gives a high level system overview.",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-vaka21fc/blob/main/experiments/lab2v2.js"
   },
   {
     "file": "experiments/lab2v3.js",
-    "name": "Lab 2, with a new aesthetic",
+    "name": "Lab 2 and 3, with a new aesthetic",
     "description": "Explains the what and the why. What is the main idea? What is the purpose? Describes the coding process and implementation choices and gives a high level system overview.",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-vaka21fc/blob/main/experiments/lab2v3.js"
   }
-  
 ]
